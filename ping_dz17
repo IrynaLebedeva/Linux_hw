@@ -1,0 +1,31 @@
+#!/bin/bash
+
+fail=0
+# бесконечный цикл пинга
+while true; do
+# Выполняем 1 пинг
+ping_result=$(ping -c 1 "google.com" | grep 'icmp_seq')
+    if echo "$ping_result" | grep -q "time="; then
+        # Извлекаем время пинга
+        ping_time=$(echo "$ping_result" | awk '{print $8}' | awk -F'=' '{print $1,$NF}' | awk '{print $2}')
+        echo "Пинг: "$ping_time" мс"
+        # Сброс счетчика ошибок
+        fail=0
+        # Проверка времени
+        time_int=${ping_time%.*} # округляем вниз
+        if [ "$time_int" -gt 100 ]; then
+            echo "⚠️ Время пинга превышает 100 мс: ${ping_time} мс"
+        fi
+    else
+        echo "Пинг не удался"
+        fail=$((fail+1))
+    if ["$fail" -ge 3]; then
+        echo"Не удалось выполнить пинг 3 раза подряд"
+        fail=0
+    fi
+    fi
+sleep 1
+ done
+ 
+  
+
