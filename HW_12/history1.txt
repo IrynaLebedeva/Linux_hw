@@ -1,0 +1,48 @@
+   92  cd
+   93  mkdir -p HW_12
+   94  cd HW_12
+   95  echo "# HW_12" >> README.md
+   96  git init
+   97  git add README.md
+   98  git commit -m "first commit"
+   99  git branch -M main
+  100  git remote add origin git@github.com:IrynaLebedeva/HW_12.git
+  101  git push -u origin main
+  102  touch .gitignore
+  103  git add .gitignore
+  104  git commit -m "add new file gitignore"
+  105  git push -u origin main
+  106  git clon https://github.com/IrynaLebedeva/HW_12
+  107  git clone https://github.com/IrynaLebedeva/HW_12
+  108  git checkout -b feature
+  109  git status
+  110  git add HW_12
+  111  cd
+  112  pwd
+  113  ls -la /c/User/aisti
+  114  ls -la /c/Users/aisti
+  115  rm -rf /c/Users/aisti/HW_12
+  116  ls -la /c/User/aisti
+  117  ls -la /c/Users/aisti
+  118  rm -rf /c/Users/aisti/08.04
+  119  ls -la /c/Users/aisti
+  120  cd /c/Users/aisti/HW_12
+  121  git push origin feature
+  122  git commit --ammend
+  123  git commit --amend
+  124  git checkout main
+  125  git merge feature
+  126  git branch
+  127  cat .gitignore
+  128  git commit --amend
+  129  cat .gitignore
+  130  git commit --ammend
+  131  git commit --amend
+  132  hystory
+  133  history
+  134  history 
+  135  history 
+  136  history tail -47
+  137  history tail -47
+  138  history | tail -47
+  139  history | tail -48 > history1.txt
